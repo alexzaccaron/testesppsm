@@ -1,0 +1,4 @@
+tracking_id	class_code	nearest_ref_id	gene_id	gene_short_name	tss_id	locus	length	coverage	FPKM	FPKM_conf_lo	FPKM_conf_hi	FPKM_status
+CUFF.1.1	-	-	CUFF.1	-	-	chr3:10285660-10292931	6808	9.28786	90811.1	80521.7	101100	OK
+ENST00000335542.11	-	-	CUFF.2	GHRL	-	chr3:10285674-10292947	1425	13.2762	129807	101301	158313	OK
+CUFF.2.2	-	-	CUFF.2	-	-	chr3:10288016-10292947	2841	7.42294	72577	55800.8	89353.1	OK

@@ -1,0 +1,3687 @@
+Needleman-Wunsch global alignment of two sequences
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s1
+# 2: t1
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:          19/1747 ( 1.1%)
+# Score: 1340.0
+# 
+#
+#=======================================
+
+s1                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t1                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s1                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t1                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s1               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t1               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s1               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t1               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s1               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t1               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s1               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t1               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s1               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t1               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s1               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAA-GAGTCGAGGACGTCAA    399
+                     ||||.|.||||||||||.|||||||.||||||| ||||||||||||||||
+t1               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s1               400 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    449
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t1               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s1               450 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAG-AG    498
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||| ||
+t1               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s1               499 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    548
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t1               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s1               549 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    598
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t1               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s1               599 CCGACCAGATTCGAGCACG-ATCAGGACAATTGCATTTCGCGAAGGCATG    647
+                     ||||||||||||||||||| ||||.|||||||||||||||.|||||||||
+t1               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s1               648 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    697
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t1               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s1               698 TATCAGGCAATTGATCAACATGATC-GTCAAGTCAAAGTGGATGGTCAGC    746
+                     |||||||||..|||||||||||||| ||||||.||||.||||.|.||||.
+t1               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s1               747 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    796
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t1               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s1               797 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGA-TCCTGGTGAAGGGCT    845
+                     .|||.||.|||||||||||||.|||||||||||| ||.|||||.||||||
+t1               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s1               846 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    895
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t1               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s1               896 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    945
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t1               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s1               946 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCA-CAGGAAGCG    994
+                     ||||||||||||||||.||||.|||||||||||||||||| |||||||||
+t1               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s1               995 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1044
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t1              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s1              1045 TGGATTTGCTTGACCGCA-GATCCACGGCAGCTAGCAGCAGTAGTAACTC   1093
+                     ..||||||.||||||||| ||||||||||||..|||||||.|.||.||||
+t1              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s1              1094 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGT-CTGCATCCTATGTGTA   1142
+                     .||||||||||.||.|||.|||||||||||.|| |||||..||..|||||
+t1              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s1              1143 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAA-A   1191
+                     |.||||.|||.|.|||||||||||.||||||||||||||||||||||| |
+t1              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s1              1192 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1241
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t1              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s1              1242 ATGCGTTTGCGGGTCAAGGCA-ATAAGAACGTGATTCGGCAGAAATACGT   1290
+                     ||||||.|||||||||.|||| |||||||||.|||||||||||.||||.|
+t1              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s1              1291 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAA-GTAAAG   1339
+                     |||||.|||||||.|||||||||.||||||||||||||.|||| |.||||
+t1              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s1              1340 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1389
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t1              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s1              1390 GATAACAGGG-TGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1437
+                     |||.||.||| |||.||||||||| ||| ||||||||||||||||.||||
+t1              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s1              1438 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTAC-TTCACTCGACAGTAA   1486
+                     ||||||||.|||.||||||||.|.||||.||||| |||||||||||||||
+t1              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s1              1487 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAA--GTAC   1534
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||  ||||
+t1              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s1              1535 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1584
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t1              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s1              1585 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGA-CTTGAAAAAGGCTTCT   1633
+                     .|..|.|||||||||.|||.||||||||||||| ||||||.|||.||||.
+t1              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s1              1634 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1683
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t1              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s1              1684 GACG-GGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1729
+                     |||| ||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t1              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s2
+# 2: t2
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:          11/1747 ( 0.6%)
+# Score: 1348.0
+# 
+#
+#=======================================
+
+s2                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t2                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s2                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t2                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s2               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t2               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s2               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t2               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s2               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t2               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s2               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t2               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s2               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t2               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s2               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t2               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s2               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t2               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s2               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t2               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s2               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t2               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s2               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t2               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s2               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t2               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s2               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t2               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s2               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t2               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s2               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t2               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s2               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGA-TCGTGGTGAAGGGCT    849
+                     .|||.||.|||||||||||||.|||||||||||| ||.|||||.||||||
+t2               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s2               850 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    899
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t2               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s2               900 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    949
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t2               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s2               950 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG    999
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t2               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s2              1000 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1049
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t2              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s2              1050 TGGATTT-GTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1098
+                     ..||||| ||||||||||.||||||||||||..|||||||.|.||.||||
+t2              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s2              1099 TTGCCAACACACGCAGTCGTCAGCTTTGTA-GTTCTGCATCCTATGTGTA   1147
+                     .||||||||||.||.|||.||||||||||| ||.|||||..||..|||||
+t2              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s2              1148 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1197
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t2              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s2              1198 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1247
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t2              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s2              1248 ATGCGTTTGCGGGTCA-GGCAAATAAGAACGTGATTCGGCAGAAATACGT   1296
+                     ||||||.||||||||| ||||.|||||||||.|||||||||||.||||.|
+t2              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s2              1297 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGC-AAAGGAATGTAAAG   1345
+                     |||||.|||||||.|||||||||.||||||||||| |||||||.|.||||
+t2              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s2              1346 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1395
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t2              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s2              1396 GATAAC-GGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1443
+                     |||.|| |||.|||.||||||||| ||| ||||||||||||||||.||||
+t2              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s2              1444 AAAACGTCCAGAGCGAGACTCGGCCGAA-GCTACCTTCACTCGACAGTAA   1492
+                     ||||||||.|||.||||||||.|.|||| |||||.|||||||||||||||
+t2              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s2              1493 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1542
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t2              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s2              1543 -ACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1591
+                      |||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t2              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s2              1592 TCGGATAAAAGCTCCTGCC-AGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1640
+                     .|..|.|||||||||.||| |||||||||||||.||||||.|||.||||.
+t2              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s2              1641 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1690
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t2              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s2              1691 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1737
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t2              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s3
+# 2: t3
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1554/1747 (89.0%)
+# Similarity:  1554/1747 (89.0%)
+# Gaps:           4/1747 ( 0.2%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s3                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t3                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s3                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t3                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s3               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t3               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s3               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t3               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s3               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t3               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s3               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t3               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s3               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t3               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s3               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t3               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s3               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t3               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s3               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t3               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s3               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t3               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s3               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t3               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s3               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t3               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s3               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t3               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s3               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t3               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s3               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t3               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s3               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t3               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s3               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t3               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s3               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t3               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s3               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t3               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s3              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t3              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s3              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t3              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s3              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t3              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s3              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t3              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s3              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t3              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s3              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t3              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s3              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t3              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s3              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t3              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s3              1401 GAT-ACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1448
+                     ||| ||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t3              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s3              1449 AAAACGTCCAGAGCGAGACTC-GGCGAACGCTACCTTCACTCGACAGTAA   1497
+                     ||||||||.|||.|||||||| ||||||.|||||.|||||||||||||||
+t3              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s3              1498 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1547
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t3              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s3              1548 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1597
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t3              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s3              1598 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1647
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t3              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s3              1648 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1697
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t3              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s3              1698 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1744
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t3              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s4
+# 2: t4
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           4/1747 ( 0.2%)
+# Score: 1355.0
+# 
+#
+#=======================================
+
+s4                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t4                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s4                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t4                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s4               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t4               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s4               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t4               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s4               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t4               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s4               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t4               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s4               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t4               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s4               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t4               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s4               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t4               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s4               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t4               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s4               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t4               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s4               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t4               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s4               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t4               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s4               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t4               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s4               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t4               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s4               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t4               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s4               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t4               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s4               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t4               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s4               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t4               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s4               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t4               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s4              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t4              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s4              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t4              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s4              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t4              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s4              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t4              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s4              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t4              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s4              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t4              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s4              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t4              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s4              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACC-AG   1399
+                     |.||||||||||||||||||||||||||||||||.||.||||||||| ||
+t4              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s4              1400 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1448
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t4              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s4              1449 AAAACGTCCAGAGCGAGACTC-GCCGAACGCTACCTTCACTCGACAGTAA   1497
+                     ||||||||.|||.|||||||| |.||||.|||||.|||||||||||||||
+t4              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s4              1498 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1547
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t4              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s4              1548 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1597
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t4              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s4              1598 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1647
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t4              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s4              1648 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1697
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t4              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s4              1698 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1744
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t4              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s5
+# 2: t5
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s5                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t5                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s5                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t5                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s5               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t5               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s5               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t5               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s5               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t5               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s5               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t5               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s5               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t5               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s5               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t5               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s5               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t5               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s5               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t5               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s5               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t5               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s5               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t5               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s5               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t5               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s5               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t5               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s5               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t5               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s5               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t5               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s5               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t5               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s5               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t5               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s5               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t5               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s5               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t5               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s5              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t5              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s5              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t5              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s5              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t5              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s5              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t5              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s5              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t5              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s5              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t5              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s5              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t5              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s5              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t5              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s5              1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t5              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s5              1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t5              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s5              1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t5              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s5              1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t5              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s5              1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t5              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s5              1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t5              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s5              1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t5              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s6
+# 2: t6
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s6                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t6                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s6                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t6                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s6               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t6               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s6               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t6               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s6               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t6               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s6               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t6               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s6               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t6               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s6               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t6               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s6               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t6               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s6               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t6               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s6               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t6               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s6               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t6               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s6               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t6               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s6               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t6               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s6               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t6               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s6               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t6               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s6               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t6               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s6               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t6               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s6               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t6               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s6               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t6               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s6              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t6              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s6              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t6              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s6              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t6              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s6              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t6              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s6              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t6              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s6              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t6              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s6              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t6              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s6              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t6              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s6              1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t6              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s6              1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t6              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s6              1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t6              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s6              1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t6              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s6              1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t6              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s6              1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t6              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s6              1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t6              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s7
+# 2: t7
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s7                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t7                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s7                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t7                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s7               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t7               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s7               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t7               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s7               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t7               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s7               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t7               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s7               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t7               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s7               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t7               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s7               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t7               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s7               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t7               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s7               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t7               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s7               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t7               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s7               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t7               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s7               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t7               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s7               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t7               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s7               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t7               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s7               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t7               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s7               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t7               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s7               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t7               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s7               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t7               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s7              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t7              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s7              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t7              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s7              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t7              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s7              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t7              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s7              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t7              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s7              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t7              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s7              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t7              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s7              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t7              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s7              1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t7              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s7              1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t7              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s7              1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t7              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s7              1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t7              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s7              1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t7              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s7              1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t7              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s7              1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t7              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s8
+# 2: t8
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s8                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t8                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s8                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t8                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s8               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t8               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s8               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t8               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s8               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t8               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s8               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t8               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s8               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t8               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s8               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t8               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s8               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t8               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s8               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t8               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s8               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t8               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s8               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t8               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s8               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t8               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s8               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t8               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s8               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t8               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s8               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t8               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s8               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t8               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s8               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t8               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s8               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t8               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s8               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t8               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s8              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t8              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s8              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t8              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s8              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t8              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s8              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t8              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s8              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t8              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s8              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t8              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s8              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t8              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s8              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t8              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s8              1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t8              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s8              1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t8              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s8              1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t8              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s8              1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t8              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s8              1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t8              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s8              1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t8              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s8              1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t8              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s9
+# 2: t9
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s9                 1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t9                 1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s9                51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t9                51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s9               101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t9               101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s9               151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t9               151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s9               201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t9               201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s9               251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t9               251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s9               301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t9               301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s9               351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t9               351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s9               401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t9               401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s9               451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t9               451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s9               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t9               501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s9               551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t9               551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s9               601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t9               601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s9               651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t9               651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s9               701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t9               701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s9               751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t9               751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s9               801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t9               801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s9               851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t9               851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s9               901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t9               901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s9               951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t9               951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s9              1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t9              1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s9              1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t9              1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s9              1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t9              1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s9              1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t9              1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s9              1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t9              1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s9              1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t9              1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s9              1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t9              1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s9              1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t9              1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s9              1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t9              1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s9              1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t9              1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s9              1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t9              1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s9              1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t9              1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s9              1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t9              1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s9              1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t9              1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s9              1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t9              1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:03
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s10
+# 2: t10
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s10                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t10                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s10               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t10               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s10              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t10              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s10              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t10              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s10              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t10              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s10              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t10              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s10              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t10              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s10              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t10              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s10              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t10              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s10              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t10              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s10              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t10              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s10              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t10              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s10              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t10              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s10              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t10              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s10              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t10              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s10              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t10              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s10              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t10              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s10              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t10              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s10              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t10              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s10              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t10              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s10             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t10             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s10             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t10             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s10             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t10             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s10             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t10             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s10             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t10             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s10             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t10             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s10             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t10             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s10             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t10             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s10             1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t10             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s10             1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t10             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s10             1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t10             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s10             1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t10             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s10             1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t10             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s10             1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t10             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s10             1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t10             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s11
+# 2: t11
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s11                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t11                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s11               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t11               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s11              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t11              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s11              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t11              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s11              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t11              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s11              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t11              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s11              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t11              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s11              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t11              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s11              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t11              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s11              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t11              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s11              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t11              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s11              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t11              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s11              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t11              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s11              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t11              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s11              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t11              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s11              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t11              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s11              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t11              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s11              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t11              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s11              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t11              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s11              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t11              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s11             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t11             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s11             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t11             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s11             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t11             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s11             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t11             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s11             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t11             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s11             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t11             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s11             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t11             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s11             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t11             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s11             1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t11             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s11             1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t11             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s11             1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t11             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s11             1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t11             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s11             1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t11             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s11             1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t11             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s11             1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t11             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s12
+# 2: t12
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s12                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t12                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s12               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t12               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s12              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t12              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s12              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t12              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s12              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t12              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s12              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t12              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s12              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t12              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s12              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t12              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s12              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t12              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s12              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t12              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s12              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t12              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s12              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t12              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s12              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t12              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s12              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t12              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s12              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t12              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s12              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t12              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s12              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t12              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s12              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t12              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s12              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t12              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s12              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t12              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s12             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t12             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s12             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t12             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s12             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t12             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s12             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t12             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s12             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t12             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s12             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t12             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s12             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t12             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s12             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t12             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s12             1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t12             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s12             1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t12             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s12             1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t12             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s12             1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t12             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s12             1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t12             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s12             1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t12             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s12             1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t12             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s13
+# 2: t13
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s13                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t13                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s13               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t13               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s13              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t13              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s13              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t13              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s13              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t13              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s13              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t13              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s13              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t13              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s13              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t13              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s13              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t13              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s13              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t13              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s13              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t13              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s13              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t13              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s13              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t13              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s13              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t13              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s13              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t13              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s13              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t13              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s13              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t13              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s13              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t13              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s13              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t13              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s13              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t13              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s13             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t13             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s13             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t13             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s13             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t13             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s13             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t13             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s13             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t13             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s13             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t13             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s13             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t13             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s13             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t13             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s13             1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t13             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s13             1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t13             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s13             1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t13             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s13             1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t13             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s13             1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t13             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s13             1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t13             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s13             1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t13             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s14
+# 2: t14
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s14                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t14                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s14               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t14               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s14              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t14              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s14              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t14              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s14              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t14              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s14              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t14              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s14              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t14              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s14              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t14              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s14              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t14              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s14              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t14              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s14              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t14              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s14              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t14              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s14              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t14              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s14              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t14              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s14              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t14              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s14              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t14              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s14              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t14              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s14              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t14              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s14              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t14              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s14              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t14              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s14             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t14             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s14             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t14             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s14             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t14             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s14             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t14             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s14             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t14             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s14             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t14             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s14             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t14             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s14             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t14             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s14             1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t14             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s14             1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t14             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s14             1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t14             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s14             1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t14             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s14             1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t14             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s14             1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t14             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s14             1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t14             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s15
+# 2: t15
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1553/1747 (88.9%)
+# Similarity:  1553/1747 (88.9%)
+# Gaps:           2/1747 ( 0.1%)
+# Score: 1357.0
+# 
+#
+#=======================================
+
+s15                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t15                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s15               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t15               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s15              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t15              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s15              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t15              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s15              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t15              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s15              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t15              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s15              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t15              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s15              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t15              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s15              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t15              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s15              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t15              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s15              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t15              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s15              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t15              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s15              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t15              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s15              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t15              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s15              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t15              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s15              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t15              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s15              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t15              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s15              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t15              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s15              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t15              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s15              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t15              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s15             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t15             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s15             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t15             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s15             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t15             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s15             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t15             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s15             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t15             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s15             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t15             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s15             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t15             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s15             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t15             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s15             1401 GATAACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1449
+                     |||.||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t15             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s15             1450 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1499
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t15             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s15             1500 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1549
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t15             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s15             1550 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1599
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t15             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s15             1600 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1649
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t15             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s15             1650 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1699
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t15             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s15             1700 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1746
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t15             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s16
+# 2: t16
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1552/1747 (88.8%)
+# Similarity:  1552/1747 (88.8%)
+# Gaps:           4/1747 ( 0.2%)
+# Score: 1353.0
+# 
+#
+#=======================================
+
+s16                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t16                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s16               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t16               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s16              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t16              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s16              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t16              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s16              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t16              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s16              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t16              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s16              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAAGCGGCCTCAAGGGCACTCTT    350
+                     .|||||||||||||||||||||||||||||.|||.||.||||||||.|||
+t16              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s16              351 GCAGGCTCCTCTCTTATTGGATACTATTCACAAGCAGTCGAGGACGTCAA    400
+                     ||||.|.||||||||||.|||||||.||||||||.|||||||||||||||
+t16              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s16              401 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    450
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t16              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s16              451 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    500
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t16              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s16              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    550
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t16              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s16              551 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    600
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t16              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s16              601 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    650
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t16              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s16              651 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    700
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t16              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s16              701 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    750
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t16              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s16              751 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    800
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t16              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s16              801 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    850
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t16              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s16              851 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    900
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t16              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s16              901 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    950
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t16              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s16              951 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG   1000
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t16              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s16             1001 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1050
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t16             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s16             1051 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1100
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t16             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s16             1101 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1150
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t16             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s16             1151 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1200
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t16             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s16             1201 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1250
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t16             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s16             1251 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1300
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t16             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s16             1301 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1350
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t16             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s16             1351 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1400
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t16             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s16             1401 GAT-A-AGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1447
+                     ||| | .|||.|||.||||||||| ||| ||||||||||||||||.||||
+t16             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s16             1448 AAAACGTCCAGAGCGAGACTCGGCCGAACGCTACCTTCACTCGACAGTAA   1497
+                     ||||||||.|||.||||||||.|.||||.|||||.|||||||||||||||
+t16             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s16             1498 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1547
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t16             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s16             1548 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1597
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t16             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s16             1598 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1647
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t16             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s16             1648 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1697
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t16             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s16             1698 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1744
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t16             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s17
+# 2: t17
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1516/1747 (86.8%)
+# Similarity:  1516/1747 (86.8%)
+# Gaps:          50/1747 ( 2.9%)
+# Score: 1235.0
+# 
+#
+#=======================================
+
+s17                1 CGTCAAAATACGATATAGGCACGCAAGCATCAGGTGGCCAGGATAGTCGA     50
+                     |||||||||.|||||.|||||.|||||||.|||.|||||..|||||||||
+t17                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s17               51 TTGTGGACTGTCAAGTATGCTCGGACGAAGCTGTCCATGATTTGCTGCGA    100
+                     ||||||||||||||||||||||.||||.|||||||||||||.|||.||.|
+t17               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s17              101 CAAAGGCTAGGTGGAAAAGCTGCAACACTGGTTGCGCGCTTTTCCGAAGT    150
+                     ||||||..|.||||||||||||||||.||||.|||||||||||||||||.
+t17              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s17              151 ACCAGCGGACCGGCTTCAAAAGGCCCGGACCAGTTGGCTCTGGCACTCAG    200
+                     |||||||||||||||||||||.|||||||||||.|||||||||||||||.
+t17              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s17              201 CGCGCCGTGGTGATCCATGGCCCCCCTGGCATCTGCAAAACCACTGCAGC    250
+                     |||||||||.||||||||||.||||||||||||.||||.|||||||||||
+t17              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s17              251 ACATTTTATTAGTAAGTTGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+                     ||||.|||||..||||.|||||||||||||||||||||||||||||||||
+t17              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s17              301 GTGACACTCGCTCGAAGAAGCTTGTTGAAA----GC-----GGC---CT-    337
+                     .|||||||||||||||||||||||||||||    ||     |||   || 
+t17              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s17              338 -CA---AC---------------------------AGTCGAGGACGTCAA    356
+                      ||   ||                           |||||||||||||||
+t17              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s17              357 AGAAGCAAACAAAAACATGGTCTTGGTCATGGAGGAAGTAGACTGGATGA    406
+                     |||||||||||||||.||.||||||||||||||.|||||.|||.|.||||
+t17              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s17              407 GTGCTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGG    456
+                     |||||||||.||||||||||||.|||.|||||||||||.|||||||||.|
+t17              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s17              457 ACCCAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGT    506
+                     |||||||||||||||||||||||||||||||||.|||||||||||.||.|
+t17              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s17              507 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    556
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t17              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s17              557 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    606
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t17              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s17              607 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    656
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t17              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s17              657 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    706
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t17              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s17              707 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    756
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t17              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s17              757 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    806
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t17              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s17              807 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    856
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t17              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s17              857 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    906
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t17              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s17              907 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG    956
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t17              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s17              957 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTATAAGGGATG   1006
+                     |||||||.||.||.||||||||||.|||||||||||||||||.||.||||
+t17             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s17             1007 TGGATTTGCTTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTC   1056
+                     ..||||||.|||||||||.||||||||||||..|||||||.|.||.||||
+t17             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s17             1057 TTGCCAACACACGCAGTCGTCAGCTTTGTAAGTTCTGCATCCTATGTGTA   1106
+                     .||||||||||.||.|||.|||||||||||.||.|||||..||..|||||
+t17             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s17             1107 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA   1156
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t17             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s17             1157 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC   1206
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t17             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s17             1207 ATGCGTTTGCGGGTCAAGGCAAATAAGAACGTGATTCGGCAGAAATACGT   1256
+                     ||||||.|||||||||.||||.|||||||||.|||||||||||.||||.|
+t17             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s17             1257 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAAACGGAATGTAAAG   1306
+                     |||||.|||||||.|||||||||.||||||||||||||.||||.|.||||
+t17             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s17             1307 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACCGAG   1356
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||.||
+t17             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s17             1357 GATAACAG---TGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1402
+                     |||.||.|   |||.||||||||| ||| ||||||||||||||||.||||
+t17             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s17             1403 AAAACGTCCAGAGCGAGACTC-GCCGAACGCTACCTTCACTCGACAGTAA   1451
+                     ||||||||.|||.|||||||| |.||||.|||||.|||||||||||||||
+t17             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s17             1452 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1501
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t17             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s17             1502 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1551
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t17             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s17             1552 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1601
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t17             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s17             1602 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1651
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t17             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s17             1652 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1698
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t17             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s18
+# 2: t18
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1747
+# Identity:    1178/1747 (67.4%)
+# Similarity:  1178/1747 (67.4%)
+# Gaps:         438/1747 (25.1%)
+# Score: 171.0
+# 
+#
+#=======================================
+
+s18                1 -G---------------GGCA--C----------T----CT--T-G-C-A     13
+                      |               ||||  |          |    ||  | | | |
+t18                1 CGTCAAAATCCGATAAAGGCAAGCAAGCAGCAGATGGCCCTGATAGTCGA     50
+
+s18               14 --G-G--C--TC-------CTC-----------TC--T--TAT-------     27
+                       | |  |  ||       |||           ||  |  |||       
+t18               51 TTGTGGACTGTCAAGTATGCTCCGACGCAGCTGTCCATGATATGCGGCAA    100
+
+s18               28 -----------TGGA-----T--A---CT-----------------A---     36
+                                ||||     |  |   ||                 |   
+t18              101 CAAAGGACAAGTGGAAAAGCTGCAACGCTGGCTGCGCGCTTTTCCGAAGA    150
+
+s18               37 --------------TTCA-----C----A--A----GC-CTGG-A-----     50
+                                   ||||     |    |  |    || |||| |     
+t18              151 ACCAGCGGACCGGCTTCAAAATGCCCGGACCAGATGGCTCTGGCACTCAT    200
+
+s18               51 -GC----------TC---G-------TGG-A--GG---------TG----     63
+                      ||          ||   |       ||| |  ||         ||    
+t18              201 CGCGCCGTGATGATCCATGGACCCCCTGGCATCGGCAAGACCACTGCAGC    250
+
+s18               64 ---TC-----G----GAT---------C-AC----TCG------------     75
+                        ||     |    |||         | ||    |||            
+t18              251 ACATCTTATTGCTAAGATGGAAGGTTACGACATCATCGAATCCAACGCGT    300
+
+s18               76 CTG-CACT------A-------TG-------C------AAG---A-----     90
+                     ||| ||||      |       ||       |      |||   |     
+t18              301 CTGACACTCGCTCGAAGAAGCTTGTTGAAAACGGGCTGAAGGGCACACTT    350
+
+s18               91 G--G--ACC-C----A-GG--T-C----C-C-------C-A-----T---    106
+                     |  |  ||| |    | ||  | |    | |       | |     |   
+t18              351 GCAGCCACCTCTCTTATGGGATACTTTTCACAAGGAGTCGAGGACGTCAA    400
+
+s18              107 ---------------GATC--C-TG---AT---C----T-G-C---A--A    121
+                                    ||||  | ||   ||   |    | | |   |  |
+t18              401 AGAAGCAAACAAAAAGATCGTCTTGGTCATGGACGAAGTCGACGGTATGA    450
+
+s18              122 -T------GAT-G-GGA--------AG---T---TGC------C------    136
+                      |      ||| | |||        ||   |   |||      |      
+t18              451 GTGCTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAG    500
+
+s18              137 -C---G------A-G-----G----------------------------T    142
+                      |   |      | |     |                            |
+t18              501 ACCCAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGAT    550
+
+s18              143 GAAGCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCC    192
+                     ||||||||||||||.||||||||||||||||.|||||||||||||||||.
+t18              551 GAAGCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCA    600
+
+s18              193 CCGACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATG    242
+                     |||||||||||||||||||.||||.|||||||||||||||.|||||||||
+t18              601 CCGACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATG    650
+
+s18              243 AAGCTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGA    292
+                     |||||||||||||||||||||||||||||.|||||||..|||||||||||
+t18              651 AAGCTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGA    700
+
+s18              293 TATCAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGC    342
+                     |||||||||..||||||||||||||.||||||.||||.||||.|.||||.
+t18              701 TATCAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGG    750
+
+s18              343 CAATGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCAT    392
+                     ||||||||||||||||||.||||||||||.||||||||||||||||||||
+t18              751 CAATGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCAT    800
+
+s18              393 TCCGACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCT    442
+                     .|||.||.|||||||||||||.|||||||||||||.|.|||||.||||||
+t18              801 ACCGTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCT    850
+
+s18              443 GTTCAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACT    492
+                     |||||||||||||||||.|.|..|||||.|||||||||||||||||||||
+t18              851 GTTCAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACT    900
+
+s18              493 TCAACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGC    542
+                     ||||.||||||||||||||||||||||||||||||.|||||||||||.||
+t18              901 TCAATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGC    950
+
+s18              543 ACGAACCCACAGCGGTGCAACGAGTACAATGATCAGCCCAACAGGAAGCG    592
+                     ||||||||||||||||.||||.||||||||||||||||||.|||||||||
+t18              951 ACGAACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCG   1000
+
+s18              593 ATTGGCGACTATGAAACTGGCAAGGAAGGCGGCAGACTCTA-TA---A-G    637
+                     |||||||.||.||.||||||||||.|||||||||||||||| ||   | |
+t18             1001 ATTGGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATG   1050
+
+s18              638 G-GATGTGGAT--TTGCA-GATCCACGGCAGCTAGCAGCAGTAGTAACTC    683
+                     | |||.|||.|  ..||| ||||||||||||..|||||||.|.||.||||
+t18             1051 GAGATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTC   1100
+
+s18              684 TTGCCAACACACGCAGTCGTCAGCTTTGTA-AT-CTGCATCCTATGTGTA    731
+                     .||||||||||.||.|||.||||||||||| .| |||||..||..|||||
+t18             1101 ATGCCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTA   1150
+
+s18              732 CAGCAGAATGACAGGCTCGCAGACCCGTTTCACTGCTTGGCTCGGCAAAA    781
+                     |.||||.|||.|.|||||||||||.|||||||||||||||||||||||.|
+t18             1151 CGGCAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACA   1200
+
+s18              782 ATTCCAAGACGGGCAAGCTGTCAAAATTTGTGAAGGTGATCTAGGGACAC    831
+                     ||||||||||||||||||||||||.|||||||||||.||||.||||||||
+t18             1201 ATTCCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACAC   1250
+
+s18              832 ATGCGTTTGCGGGTCA----AAATAAGAACGTGATTCGGCAGAAATACGT    877
+                     ||||||.|||||||||    |.|||||||||.|||||||||||.||||.|
+t18             1251 ATGCGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTT   1300
+
+s18              878 ACCGAGTTTGTTTAAGAAGCTCGGCAAGCGCTTGCAA----ACTGTAAAG    923
+                     |||||.|||||||.|||||||||.|||||||||||||    |..|.||||
+t18             1301 ACCGATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAG   1350
+
+s18              924 AAGCTGTGCCAGAGATTATCGAGCTCATGGATTCGTATTACCTCACC---    970
+                     |.||||||||||||||||||||||||||||||||.||.|||||||||   
+t18             1351 ATGCTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAG   1400
+
+s18              971 GA--ACAGGGGTGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGG   1017
+                     ||  ||.|||.|||.||||||||| ||| ||||||||||||||||.||||
+t18             1401 GATGACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGG   1449
+
+s18             1018 AAAACGTCCAGAGCGAGACTC-GGC---CGCTACCTTCACTCGACAGTAA   1063
+                     ||||||||.|||.|||||||| |||   .|||||.|||||||||||||||
+t18             1450 AAAACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAA   1499
+
+s18             1064 AAGCATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAAGTGTAC   1113
+                     ..|||||.|||||||.||||||||||||||||||||||.|||||..||||
+t18             1500 GTGCATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTAC   1549
+
+s18             1114 GACCAAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGC   1163
+                     .|||||||||||||.|||||.|||||.|..||||||||||||||||.|||
+t18             1550 AACCAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGC   1599
+
+s18             1164 TCGGATAAAAGCTCCTGCCGAGGAGAAGCCTGAACTTGAAAAAGGCTTCT   1213
+                     .|..|.|||||||||.|||.|||||||||||||.||||||.|||.||||.
+t18             1600 GCCAACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCG   1649
+
+s18             1214 AAGTAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAA   1263
+                     |||.|.|||||||..|||.||.|.||||.||||||||||.||||||||||
+t18             1650 AAGAATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAA   1699
+
+s18             1264 GACGCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1310
+                     ||||.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t18             1700 GACGAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1746
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s19
+# 2: t19
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1294
+# Identity:     985/1294 (76.1%)
+# Similarity:   985/1294 (76.1%)
+# Gaps:         205/1294 (15.8%)
+# Score: 471.0
+# 
+#
+#=======================================
+
+s19                1 CTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGGACC     50
+                     ||||||.||||||||||||.|||.|||||||||||.|||||||||.||||
+t19                1 CTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAGACC     50
+
+s19               51 CAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGTGAA    100
+                     ||||||||||||||||||||||||||||||.|||||||||||.||.||||
+t19               51 CAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGATGAA    100
+
+s19              101 GCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCCCCG    150
+                     |||||||||||.||||||||||||||||.|||||||||||||||||.|||
+t19              101 GCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCACCG    150
+
+s19              151 ACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATGAAG    200
+                     ||||||||||||||||.||||.|||||||||||||||.||||||||||||
+t19              151 ACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATGAAG    200
+
+s19              201 CTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGATAT    250
+                     ||||||||||||||||||||||||||.|||||||..||||||||||||||
+t19              201 CTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGATAT    250
+
+s19              251 CAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGCCAA    300
+                     ||||||..||||||||||||||.||||||.||||.||||.|.||||.|||
+t19              251 CAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGGCAA    300
+
+s19              301 TGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCATTCC    350
+                     |||||||||||||||.||||||||||.||||||||||||||||||||.||
+t19              301 TGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCATACC    350
+
+s19              351 GACCACAAGCCGTGGGATCTGGTGGGCAAGATCCGTGGTGAAGGGCTGTT    400
+                     |.||.|||||||||||||.|||||||||||||.|.|||||.|||||||||
+t19              351 GTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCTGTT    400
+
+s19              401 CAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTACTTCA    450
+                     ||||||||||||||.|.|..|||||.||||||||||||||||||||||||
+t19              401 CAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACTTCA    450
+
+s19              451 ACGATCACGAATTTGCACCCCTCATGTTGCAGAAAAACTATCTTTGCACG    500
+                     |.||||||||||||||||||||||||||||||.|||||||||||.|||||
+t19              451 ATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGCACG    500
+
+s19              501 AACCCACAGCGGT--A----------------------CAGGAAGCGATT    526
+                     |||||||||||||  |                      ||||||||||||
+t19              501 AACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCGATT    550
+
+s19              527 GGCGACTATGAAACTGGCAAGGAAGGCGGCAG-C----------------    559
+                     ||||.||.||.||||||||||.|||||||||| |                
+t19              551 GGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATGGAG    600
+
+s19              560 ------TTGACCGCAAGATCCACGGCAGCTAGCAGCAGTAGTAACTCTTG    603
+                           |||||||||.||||||||||||..|||||||.|.||.||||.||
+t19              601 ATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTCATG    650
+
+s19              604 -CA------G-T-TCT---GC-----A--TCCT--A---T--GTGTACAG    627
+                      ||      | | |||   ||     |  ||||  |   |  ||||||.|
+t19              651 CCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTACGG    700
+
+s19              628 CAGAATG----------A---------CA------GGCTC-GCAGAAATT    651
+                     |||.|||          |         ||      ||||| |||..||||
+t19              701 CAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACAATT    750
+
+s19              652 CCAAGACGGGCAAGCTGTCAAAATTTGTGAAGG---T-----GA------    687
+                     |||||||||||||||||||||.|||||||||||   |     ||      
+t19              751 CCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACACATG    800
+
+s19              688 ----------TCA-GGCAAATAAGAACGTGATTCGGCAGA-A-A--TA-C    721
+                               ||| ||||.|||||||||.||||||||||| | |  || |
+t19              801 CGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTTACC    850
+
+s19              722 G-T--------A----C-CG---AG---TTTC----GGAATGTAAAGAAG    747
+                     | |        |    | ||   ||   ||.|    ||||.|.|||||.|
+t19              851 GATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAGATG    900
+
+s19              748 CTGTGCCAGAGATTATCGAGCTCAT-GA---GGA-TA----AC--AGG--    784
+                     ||||||||||||||||||||||||| ||   ..| ||    ||  |||  
+t19              901 CTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAGGAT    950
+
+s19              785 G---G---TGCCATTCTGGAAGCTT-GTGTGGGTGGGGCTGAAATGGAAA    827
+                     |   |   |||.||||||||| ||| ||||||||||||||||.|||||||
+t19              951 GACTGGGATGCTATTCTGGAA-CTTGGTGTGGGTGGGGCTGATATGGAAA    999
+
+s19              828 ACGTCCAGAGCGAGACTCGGCCGAA--C--C-TTCACTCGACAGTAAAAG    872
+                     |||||.|||.||||||||.|.||||  |  | |||||||||||||||..|
+t19             1000 ACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAAGTG   1049
+
+s19              873 CATCCCTGAGATTGCGTTGATTGACACTGCTAACAGTGTAA--GT--GAC    918
+                     ||||.|||||||.||||||||||||||||||||||.|||||  ||  .||
+t19             1050 CATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTACAAC   1099
+
+s19              919 CAAATGTCTCAGCCCCTCCCAT---TGA-------ACAAG-----GCGTC    953
+                     |||||||||||.|||||.||||   |||       |||||     |||.|
+t19             1100 CAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGCGCC   1149
+
+s19              954 -AC--AAG-T--TG-CGAGGAGAAGCCTGAACTTGAAAAAGGCTTCTAAG    996
+                      ||  ||| |  .| |.|||||||||||||.||||||.|||.||||.|||
+t19             1150 AACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCGAAG   1199
+
+s19              997 TAACCGCTGAAAAGGACCTTTACGAAACTGCTGTCACGAAAGAAGAAGAC   1046
+                     .|.|||||||..|||.||.|.||||.||||||||||.|||||||||||||
+t19             1200 AATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAAGAC   1249
+
+s19             1047 GCGGAAAACGATATAATCAAAGACAAATATGTCAAGAAGCAAAA   1090
+                     |.||||||||||.|.|.|||||||||.|||||||||.|.|.|||
+t19             1250 GAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1293
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s20
+# 2: t20
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 1293
+# Identity:     801/1293 (61.9%)
+# Similarity:   801/1293 (61.9%)
+# Gaps:         426/1293 (32.9%)
+# Score: -117.0
+# 
+#
+#=======================================
+
+s20                1 CTGGAGCTCGTGGAGGTGTCGGATCACTCGCTGCACTATGCAAGAGGACC     50
+                     ||||||.||||||||||||.|||.|||||||||||.|||||||||.||||
+t20                1 CTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAGACC     50
+
+s20               51 CAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCCGAGGTGAA    100
+                     ||||||||||||||||||||||||||||||.|||||||||||.||.||||
+t20               51 CAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGATGAA    100
+
+s20              101 GCCATTCGACTCCTGCACTTTTGATCTGTCTTTCCGTCGACCTACCCCCG    150
+                     |||||||||||.||||||||||||||||.|||||||||||||||||.|||
+t20              101 GCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCACCG    150
+
+s20              151 ACCAGATTCGAGCACGAATCAGGACAATTGCATTTCGCGAAGGCATGAAG    200
+                     ||||||||||||||||.||||.|||||||||||||||.||||||||||||
+t20              151 ACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATGAAG    200
+
+s20              201 CTACCCCCTCCAGTCATCAACGCACTAATCGAAGCTTCTGGCGCCGATAT    250
+                     ||||||||||||||||||||||||||.|||||||..||||||||||||||
+t20              201 CTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGATAT    250
+
+s20              251 CAGGCAATTGATCAACATGATCTGTCAAGTCAAAGTGGATGGTCAGCCAA    300
+                     ||||||..||||||||||||||.||||||.||||.||||.|.||||.|||
+t20              251 CAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGGCAA    300
+
+s20              301 TGTCCTTCGAAGACGTGAAAGACATGGGCAAAGCTTGGGAGAAGCATTCC    350
+                     |||||||||||||||.||||||||||.||||||||||||||||||||.||
+t20              301 TGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCATACC    350
+
+s20              351 GACCACAAGCCGTGGGATCTGGTGGGCAAGA-TCGTGGTGAAGGGCTGTT    399
+                     |.||.|||||||||||||.|||||||||||| ||.|||||.|||||||||
+t20              351 GTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCTGTT    400
+
+s20              400 CAATGAAGCCTCCA---CGAC--TG--C--C----TTG--C---AC----    427
+                     ||||||||||||||   ||||  ||  |  |    .||  |   ||    
+t20              401 CAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTACTTCA    450
+
+s20              428 --GA-CA--A----G-AC------TG---------AACT-T-T--GC---    445
+                       || ||  |    | ||      ||         |||| | |  ||   
+t20              451 ATGATCACGAATTTGCACCCCTCATGTTGCAGGAAAACTATCTTGGCACG    500
+
+s20              446 AAC-----G----------AGTACAATGATCAGCCCA--A--A--C--T-    471
+                     |||     |          ||||||||||||||||||  |  |  |  | 
+t20              501 AACCCACAGCGGTCCAACAAGTACAATGATCAGCCCAGCAGGAAGCGATT    550
+
+s20              472 -----CT----A--T---AAG---GG----A---T------GTG-----G    486
+                          ||    |  |   |||   ||    |   |      |||     |
+t20              551 GGCGGCTTTGGAACTGGCAAGCAAGGCGGCAGACTCTATTAGTGATGGAG    600
+
+s20              487 ATTTG-----C----T--T----G--A--C--C-GCAA----CA---A--    505
+                     |||||     |    |  |    |  |  |  | ||||    ||   |  
+t20              601 ATTTGGTTGACCGCATGATCCACGGCAGTCAGCAGCAATGGTCACTCATG    650
+
+s20              506 C--ACAC--G-------CAG-T-----CGTC-----AGCTT--TGTA---    528
+                     |  ||||  |       ||| |     ||||     |||||  ||||   
+t20              651 CCAACACATGCTGTCTTCAGCTTTGTACGTCCTGCAAGCTTCGTGTACGG    700
+
+s20              529 -AGT-T-------------ACCCGTTTCACTGCTTGGCTCGGCA--AAT-    560
+                      ||| |             ||.||||||||||||||||||||||  ||| 
+t20              701 CAGTATGGCTGGCTCGCAGACGCGTTTCACTGCTTGGCTCGGCAACAATT    750
+
+s20              561 ---------------------------------------AGGGACACATG    571
+                                                            |||||||||||
+t20              751 CCAAGACGGGCAAGCTGTCAAGATTTGTGAAGGAGATCCAGGGACACATG    800
+
+s20              572 CGTTTGCGGGTCA----AG----G--C-A-A---G-------T--TTA--    595
+                     |||.|||||||||    ||    |  | | |   |       |  |||  
+t20              801 CGTCTGCGGGTCACGGCAGATAAGAACGAGATTCGGCAGACATACTTACC    850
+
+s20              596 -----------AGAAGCTCGGCAAGCGCTTGCAAACGGA--------ATG    626
+                                |||||||||.||||||||||||||.|||        |||
+t20              851 GATTTTGTTTGAGAAGCTCGTCAAGCGCTTGCAAAAGGAAGGCAAAGATG    900
+
+s20              627 ----------GAT--TCG---T-AT----------TACCTCACCGAGGAT    650
+                               |||  |||   | ||          |||||||||.|||||
+t20              901 CTGTGCCAGAGATTATCGAGCTCATGGATTCCTACTACCTCACCAAGGAT    950
+
+s20              651 -A-----A--C-A----GG--------------GGGGC------------    661
+                      |     |  | |    ||              |||||            
+t20              951 GACTGGGATGCTATTCTGGAACTTGGTGTGGGTGGGGCTGATATGGAAAA   1000
+
+s20              662 CG--AA---CG---CT-A--C-----C----TTCACTCGACAGTAAAAGC    691
+                     ||  ||   ||   || |  |     |    |||||||||||||||..||
+t20             1001 CGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAAGTGC   1050
+
+s20              692 ATCCCTGAGATTGCGTTG---G----TG-T-AC---G----------ACC    719
+                     |||.|||||||.||||||   |    || | ||   |          |||
+t20             1051 ATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTACAACC   1100
+
+s20              720 AAATGTCTCAGCCCCTCCCATTGAACAAGGCGTCACAAGTTGCAGCTCGG    769
+                     ||||||||||.|||||.|||||.|..||||||||||||||||.|||.|..
+t20             1101 AAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGCGCCA   1150
+
+s20              770 ATAAAAGCTCCTGCC---GA----------CTTGAAAAAGGCTTCTAAGT    806
+                     |.|||||||||.|||   ||          ||||||.|||.||||.|||.
+t20             1151 ACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCGAAGA   1200
+
+s20              807 AACCGCTGA--A--------AAG-GAC--C--TC--G---GAA-A--ACG    833
+                     |.|||||||  |        |.| |||  |  ||  |   ||| |  |||
+t20             1201 ATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAAGACG   1250
+
+s20              834 A-TATA---AT-----CAAAGACAAATATGTCAAGAAGCAAAA    867
+                     | .|.|   ||     |||||||||.|||||||||.|.|.|||
+t20             1251 AGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA   1293
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s21
+# 2: t21
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 744
+# Identity:     366/744 (49.2%)
+# Similarity:   366/744 (49.2%)
+# Gaps:         362/744 (48.7%)
+# Score: -374.0
+# 
+#
+#=======================================
+
+s21                1 --G-------------------------------------------GACC      5
+                       |                                           ||||
+t21                1 CTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAGACC     50
+
+s21                6 CAGGTCCCCATGATCCTGATCTGCAATGATGGGAAGTTGCCC--GA-G--     50
+                     ||||||||||||||||||||||||||||||.|||||||||||  || |  
+t21               51 CAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGATGAA    100
+
+s21               51 G---T--GA----AGC-C-----AT-----------TCGA-CTA--A---     68
+                     |   |  ||    .|| |     ||           |||| |||  |   
+t21              101 GCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCACCG    150
+
+s21               69 -------TC-AG----------GACAATTGCATTTCGCGAAGGCATGAAG    100
+                            || ||          |||||||||||||||.||||||||||||
+t21              151 ACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATGAAG    200
+
+s21              101 CTACCCCCTCCAGTCATCAACG---TG-TC-AAG--TC--------A-A-    133
+                     ||||||||||||||||||||||   || || |||  ||        | | 
+t21              201 CTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGATAT    250
+
+s21              134 -A-----GTG--------GAT--G----G-------------TCAGCCAA    150
+                      |     |||        |||  |    |             ||||.|||
+t21              251 CAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGGCAA    300
+
+s21              151 TGTCCTTCGAAGACGTGAAAGACATG-G----GC-----A-AAG----CC    185
+                     |||||||||||||||.|||||||||| |    ||     | |||    ||
+t21              301 TGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCATACC    350
+
+s21              186 GT------G--GT--GA------------------------AGGGCTGTT    201
+                     ||      |  ||  ||                        |||||||||
+t21              351 GTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCTGTT    400
+
+s21              202 CAATGAAGCCTCCACGACTGCCTTGCACGACAAGACTGAACTTTTGGAAA    251
+                     ||||||||||||||.|.|..|||||.||||||||||||||||||||||||
+t21              401 CAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTTTGGAAA    450
+
+s21              252 ACGTCCAGAGCGAGACTC-GGC--------CG---A----AC-------G    278
+                     |||||.|||.|||||||| |||        ||   |    ||       |
+t21              451 ACGTCAAGATCGAGACTCAGGCGAAGGCTACGTTCACTCGACAGTAAGTG    500
+
+s21              279 C-T-----A-----C---CATTGACACTGCTAACA--GT----GT-----    303
+                     | |     |     |   .||||||||||||||||  ||    ||     
+t21              501 CATCGCTGAGATGGCGTTGATTGACACTGCTAACATTGTAAAGGTACAAC    550
+
+s21              304 -AAGTGT---AC-----G--A---------GC-TC----G--G-------    319
+                      ||.|||   ||     |  |         || ||    |  |       
+t21              551 CAAATGTCTCACCCCCTGCCATTCATGAAGGCGTCACAAGTTGTAGCGCC    600
+
+s21              320 -ATAAAAGCTCCTGCC---GAG--G-----------AGAAGCCT-----G    347
+                      |.|||||||||.|||   |||  |           ||||||||     |
+t21              601 AACAAAAGCTCCAGCCAAGGAGAAGCCTGACCTTGAAGAAGCCTTCGAAG    650
+
+s21              348 AAT----T-A------C---GA--A-ACTGCTGTC-------------AC    367
+                     |||    | |      |   ||  | |||||||||             ||
+t21              651 AATCCGCTGATGAGGGCCCTGACGAGACTGCTGTCAAGAAAGAAGAAGAC    700
+
+s21              368 GA--AA---GA----AG--AAGAC--G-----C-----------    382
+                     ||  ||   ||    ||  |||||  |     |           
+t21              701 GAGGAAAACGATCTCAGCAAAGACAAGTATGTCAAGCAACCAAA    744
+
+
+#---------------------------------------
+#---------------------------------------
+Needleman-Wunsch global alignment of two sequences
+########################################
+# Program: needle
+# Rundate: Fri 12 Jun 2015 15:36:04
+# Commandline: needle
+#    -asequence Spair
+#    -bsequence Tpair
+#    -gapopen 2
+#    -gapextend 2
+#    -outfile stdout
+#    -endweight
+#    -endopen 2
+#    -endextend 2
+#    -datafile scoring_matrix
+# Align_format: srspair
+# Report_file: stdout
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: s22
+# 2: t22
+# Matrix: scoring_matrix
+# Gap_penalty: 2.0
+# Extend_penalty: 2.0
+#
+# Length: 444
+# Identity:     199/444 (44.8%)
+# Similarity:   199/444 (44.8%)
+# Gaps:         239/444 (53.8%)
+# Score: -285.0
+# 
+#
+#=======================================
+
+s22                1 CTGGAGCTCGTGGAGGTG---------TCG--G-A-T---C------ACT     28
+                     ||||||.|||||||||||         |||  | | |   |      ||.
+t22                1 CTGGAGATCGTGGAGGTGTGGGAGCACTCGCTGCAGTATGCAAGAAGACC     50
+
+s22               29 C-G--C----TG--C---A-CT---ATG--C--AAG-------------A     45
+                     | |  |    ||  |   | ||   |||  |  |||             |
+t22               51 CAGGTCCCCATGATCCTGATCTGCAATGATCGGAAGTTGCCCAAGATGAA    100
+
+s22               46 GC----------CTGCACTTTTGATCTGTCTTTCCGTCGACCTACCCCCG     85
+                     ||          ||||||||||||||||.|||||||||||||||||.|||
+t22              101 GCCATTCGACTTCTGCACTTTTGATCTGCCTTTCCGTCGACCTACCACCG    150
+
+s22               86 ACCAGATTCGAGCACG-A-C---AC--T---A------------AT----    109
+                     |||||||||||||||| | |   ||  |   |            ||    
+t22              151 ACCAGATTCGAGCACGCATCATGACAATTGCATTTCGAGAAGGCATGAAG    200
+
+s22              110 C-----------G--A--A--G--CT----------TCTGGCGCCGATAT    130
+                     |           |  |  |  |  ||          ||||||||||||||
+t22              201 CTACCCCCTCCAGTCATCAACGCACTGATCGAAGGATCTGGCGCCGATAT    250
+
+s22              131 CAGGCA----AT-----TGATCA---A---CA---T----GATC------    152
+                     ||||||    ||     ||||||   |   ||   |    ||||      
+t22              251 CAGGCAGGTGATCAACATGATCAGTCAAGCCAAACTGGACGATCAGGCAA    300
+
+s22              153 T---CTT-G--G--G----AGA----AGCA----TT------------CC    170
+                     |   ||| |  |  |    |||    ||||    ||            ||
+t22              301 TGTCCTTCGAAGACGGGAAAGACATGAGCAAAGCTTGGGAGAAGCATACC    350
+
+s22              171 GACCACAAGCCGTGGGAT--------C--------TGGTGG-G-------    196
+                     |.||.|||||||||||||        |        |||||| |       
+t22              351 GTCCTCAAGCCGTGGGATATGGTGGGCAAGATTCTTGGTGGAGGGCTGTT    400
+
+s22              197 CAA-GA----TCC--G----------------------------    205
+                     ||| ||    |||  |                            
+t22              401 CAATGAAGCCTCCAAGTCGACCTTGAACGACAAGACTGAACTTT    444
+
+
+#---------------------------------------
+#---------------------------------------
+
+real	0m1.018s
+user	0m0.880s
+sys	0m0.142s

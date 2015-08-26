@@ -1,0 +1,5 @@
+chr17	Cufflinks	transcript	15944917	15975746	1	+	.	gene_id "CUFF.1"; transcript_id "ENST00000304222.2"; FPKM "0.0000000000"; frac "0.000000"; conf_lo "0.000000"; conf_hi "9706.719196"; cov "0.000000"; full_read_support "no";
+chr17	Cufflinks	exon	15944917	15945583	1	+	.	gene_id "CUFF.1"; transcript_id "ENST00000304222.2"; exon_number "1"; FPKM "0.0000000000"; frac "0.000000"; conf_lo "0.000000"; conf_hi "9706.719196"; cov "0.000000";
+chr17	Cufflinks	exon	15974679	15975746	1	+	.	gene_id "CUFF.1"; transcript_id "ENST00000304222.2"; exon_number "2"; FPKM "0.0000000000"; frac "0.000000"; conf_lo "0.000000"; conf_hi "9706.719196"; cov "0.000000";
+chr17	Cufflinks	transcript	15972219	15975746	1000	+	.	gene_id "CUFF.1"; transcript_id "CUFF.1.2"; FPKM "274493.6233693968"; frac "1.000000"; conf_lo "223214.084653"; conf_hi "325773.162086"; cov "5.403641"; full_read_support "yes";
+chr17	Cufflinks	exon	15972219	15975746	1000	+	.	gene_id "CUFF.1"; transcript_id "CUFF.1.2"; exon_number "1"; FPKM "274493.6233693968"; frac "1.000000"; conf_lo "223214.084653"; conf_hi "325773.162086"; cov "5.403641";

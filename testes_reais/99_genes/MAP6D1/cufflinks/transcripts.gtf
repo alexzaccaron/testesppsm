@@ -1,0 +1,10 @@
+chr3	Cufflinks	transcript	183815847	183825628	368	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; FPKM "112139.0465347510"; frac "0.323122"; conf_lo "74808.376280"; conf_hi "149469.716790"; cov "4.275334";
+chr3	Cufflinks	exon	183815847	183817436	368	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; exon_number "1"; FPKM "112139.0465347510"; frac "0.323122"; conf_lo "74808.376280"; conf_hi "149469.716790"; cov "4.275334";
+chr3	Cufflinks	exon	183817994	183818111	368	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; exon_number "2"; FPKM "112139.0465347510"; frac "0.323122"; conf_lo "74808.376280"; conf_hi "149469.716790"; cov "4.275334";
+chr3	Cufflinks	exon	183825147	183825628	368	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; exon_number "3"; FPKM "112139.0465347510"; frac "0.323122"; conf_lo "74808.376280"; conf_hi "149469.716790"; cov "4.275334";
+chr3	Cufflinks	transcript	183815847	183818364	1000	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.2"; FPKM "303925.2532714239"; frac "0.676878"; conf_lo "240448.763027"; conf_hi "367401.743516"; cov "11.587241";
+chr3	Cufflinks	exon	183815847	183817436	1000	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.2"; exon_number "1"; FPKM "303925.2532714239"; frac "0.676878"; conf_lo "240448.763027"; conf_hi "367401.743516"; cov "11.587241";
+chr3	Cufflinks	exon	183817994	183818111	1000	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.2"; exon_number "2"; FPKM "303925.2532714239"; frac "0.676878"; conf_lo "240448.763027"; conf_hi "367401.743516"; cov "11.587241";
+chr3	Cufflinks	exon	183818333	183818364	1000	-	.	gene_id "CUFF.1"; transcript_id "CUFF.1.2"; exon_number "3"; FPKM "303925.2532714239"; frac "0.676878"; conf_lo "240448.763027"; conf_hi "367401.743516"; cov "11.587241";
+chr3	Cufflinks	transcript	183824357	183825138	1000	.	.	gene_id "CUFF.2"; transcript_id "CUFF.2.1"; FPKM "155526.0251962269"; frac "1.000000"; conf_lo "91604.987772"; conf_hi "219447.062620"; cov "5.564255";
+chr3	Cufflinks	exon	183824357	183825138	1000	.	.	gene_id "CUFF.2"; transcript_id "CUFF.2.1"; exon_number "1"; FPKM "155526.0251962269"; frac "1.000000"; conf_lo "91604.987772"; conf_hi "219447.062620"; cov "5.564255";

@@ -1,0 +1,841 @@
+Pair 1
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1883.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..6], 31: [7..65], 66: [66..75], 97: [77..129], 121: [130..135], 151: [136..194], 181: [195..199], 211: [200..258], 241: [259..264], 271: [265..323], 301: [324..328], 331: [329..387], 361: [388..392], 391: [393..451], 421: [452..456], 451: [457..515], 481: [516..534], 511: [535..610], 541: [611..629], 571: [630..705], 601: [706..724], 632: [726..800], 661: [801..818], 691: [819..894], 721: [895..916], 730: [917..954], 739: [955..1005], 748: [1006..1043], 757: [1044..1065], 766: [1066..1132], 775: [1133..1154], 784: [1155..1192], 793: [1193..1243], 802: [1244..1281], 811: [1282..1303], 820: [1304..1370], 830: [1371..1387], 847: [1389..1432], 861: [1433..1448], 877: [1449..1493], 893: [1494..1509], 909: [1510..1554], 925: [1555..1570], 941: [1571..1615], 957: [1616..1631], 973: [1632..1677], 989: [1678..1693], 1005: [1694..1738], 1021: [1739..1754], 1037: [1755..1799], 1053: [1800..1815], 1069: [1816..1860], 1085: [1861..1903], 1101: [1904..1975], 1117: [1976..2018], 1133: [2019..2090], 1149: [2091..2133], 1165: [2134..2205], 1181: [2206..2248], 1197: [2249..2320], }
+--------------------
+
+Pair 2
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1883.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..7], 30: [8..65], 64: [66..76], 94: [78..129], 117: [130..136], 146: [137..194], 175: [195..200], 204: [201..258], 233: [259..265], 262: [266..323], 291: [324..329], 320: [330..387], 349: [388..393], 378: [394..451], 407: [452..457], 436: [458..515], 465: [516..535], 494: [536..610], 523: [611..630], 552: [631..705], 581: [706..725], 611: [727..800], 639: [801..819], 668: [820..894], 697: [895..917], 705: [918..954], 713: [955..1006], 721: [1007..1043], 729: [1044..1066], 737: [1067..1132], 745: [1133..1155], 753: [1156..1192], 761: [1193..1244], 769: [1245..1281], 777: [1282..1304], 785: [1305..1370], 794: [1371..1388], 810: [1390..1432], 823: [1433..1449], 838: [1450..1493], 853: [1494..1510], 868: [1511..1554], 883: [1555..1571], 898: [1572..1615], 913: [1616..1632], 928: [1633..1677], 943: [1678..1694], 958: [1695..1738], 973: [1739..1755], 988: [1756..1799], 1003: [1800..1816], 1018: [1817..1860], 1033: [1861..1904], 1048: [1905..1975], 1063: [1976..2019], 1078: [2020..2090], 1093: [2091..2134], 1108: [2135..2205], 1123: [2206..2249], 1138: [2250..2320], }
+--------------------
+
+Pair 3
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1881.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..8], 29: [9..65], 62: [66..77], 91: [79..129], 113: [130..137], 141: [138..194], 169: [195..201], 197: [202..258], 225: [259..266], 253: [267..323], 281: [324..330], 309: [331..387], 337: [388..394], 365: [395..451], 393: [452..458], 421: [459..515], 449: [516..536], 477: [537..610], 505: [611..631], 533: [632..705], 562: [706..727], 590: [728..800], 617: [801..820], 645: [821..894], 673: [895..918], 680: [919..954], 687: [955..1007], 694: [1008..1043], 701: [1044..1067], 708: [1068..1132], 715: [1133..1156], 722: [1157..1192], 729: [1193..1245], 736: [1246..1281], 743: [1282..1305], 750: [1306..1370], 757: [1371..1386], 771: [1387..1432], 785: [1433..1450], 799: [1451..1493], 813: [1494..1511], 827: [1512..1554], 841: [1555..1572], 855: [1573..1615], 869: [1616..1633], 883: [1634..1677], 897: [1678..1695], 911: [1696..1738], 925: [1739..1756], 939: [1757..1799], 953: [1800..1817], 967: [1818..1860], 981: [1861..1905], 995: [1906..1975], 1009: [1976..2020], 1023: [2021..2090], 1037: [2091..2135], 1051: [2136..2205], 1065: [2206..2250], 1079: [2251..2320], }
+--------------------
+
+Pair 4
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1881.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..9], 28: [10..65], 60: [66..78], 88: [80..129], 109: [130..138], 136: [139..194], 163: [195..202], 190: [203..258], 217: [259..267], 244: [268..323], 271: [324..331], 298: [332..387], 325: [388..395], 352: [396..451], 379: [452..459], 406: [460..515], 433: [516..537], 460: [538..610], 487: [611..632], 514: [633..705], 542: [706..728], 569: [729..800], 595: [801..821], 622: [822..894], 649: [895..919], 655: [920..954], 661: [955..1008], 667: [1009..1043], 673: [1044..1068], 679: [1069..1132], 685: [1133..1157], 691: [1158..1192], 697: [1193..1246], 703: [1247..1281], 709: [1282..1306], 715: [1307..1370], 722: [1371..1390], 735: [1391..1432], 747: [1433..1451], 760: [1452..1493], 773: [1494..1512], 786: [1513..1554], 799: [1555..1573], 812: [1574..1615], 825: [1616..1634], 838: [1635..1677], 851: [1678..1696], 864: [1697..1738], 877: [1739..1757], 890: [1758..1799], 903: [1800..1818], 916: [1819..1860], 929: [1861..1906], 942: [1907..1975], 955: [1976..2021], 968: [2022..2090], 981: [2091..2136], 994: [2137..2205], 1007: [2206..2251], 1020: [2252..2320], }
+--------------------
+
+Pair 5
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1880.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..10], 27: [11..65], 53: [66..70], 79: [71..129], 105: [130..139], 131: [140..194], 157: [195..203], 183: [204..258], 209: [259..268], 235: [269..323], 261: [324..332], 287: [333..387], 313: [388..396], 339: [397..451], 365: [452..460], 391: [461..515], 417: [516..538], 443: [539..610], 469: [611..633], 495: [634..705], 522: [706..729], 548: [730..800], 573: [801..822], 599: [823..894], 625: [895..920], 630: [921..954], 635: [955..1009], 640: [1010..1043], 645: [1044..1069], 650: [1070..1132], 655: [1133..1158], 660: [1159..1192], 665: [1193..1247], 670: [1248..1281], 675: [1282..1307], 680: [1308..1370], 685: [1371..1389], 698: [1392..1432], 709: [1433..1452], 721: [1453..1493], 733: [1494..1513], 745: [1514..1554], 757: [1555..1574], 769: [1575..1615], 781: [1616..1635], 793: [1636..1677], 805: [1678..1697], 817: [1698..1738], 829: [1739..1758], 841: [1759..1799], 853: [1800..1819], 865: [1820..1860], 877: [1861..1907], 889: [1908..1975], 901: [1976..2022], 913: [2023..2090], 925: [2091..2137], 937: [2138..2205], 949: [2206..2252], 961: [2253..2320], }
+--------------------
+
+Pair 6
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1880.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..11], 26: [12..65], 51: [66..71], 76: [72..129], 101: [130..140], 126: [141..194], 151: [195..204], 176: [205..258], 201: [259..269], 226: [270..323], 251: [324..333], 276: [334..387], 301: [388..397], 326: [398..451], 351: [452..461], 376: [462..515], 401: [516..539], 426: [540..610], 451: [611..634], 476: [635..705], 502: [706..730], 527: [731..800], 551: [801..823], 576: [824..894], 601: [895..921], 605: [922..954], 609: [955..1010], 613: [1011..1043], 617: [1044..1070], 621: [1071..1132], 625: [1133..1159], 629: [1160..1192], 633: [1193..1248], 637: [1249..1281], 641: [1282..1308], 645: [1309..1370], 650: [1371..1392], 661: [1393..1432], 671: [1433..1453], 682: [1454..1493], 693: [1494..1514], 704: [1515..1554], 715: [1555..1575], 726: [1576..1615], 737: [1616..1636], 748: [1637..1677], 759: [1678..1698], 770: [1699..1738], 781: [1739..1759], 792: [1760..1799], 803: [1800..1820], 814: [1821..1860], 825: [1861..1908], 836: [1909..1975], 847: [1976..2023], 858: [2024..2090], 869: [2091..2138], 880: [2139..2205], 891: [2206..2253], 902: [2254..2320], }
+--------------------
+
+Pair 7
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1880.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..12], 25: [13..65], 49: [66..72], 73: [73..129], 97: [130..141], 121: [142..194], 145: [195..205], 169: [206..258], 193: [259..270], 217: [271..323], 241: [324..334], 265: [335..387], 289: [388..398], 313: [399..451], 337: [452..462], 361: [463..515], 385: [516..540], 409: [541..610], 433: [611..635], 457: [636..705], 482: [706..731], 506: [732..800], 529: [801..824], 553: [825..894], 577: [895..922], 580: [923..954], 583: [955..1011], 586: [1012..1043], 589: [1044..1071], 592: [1072..1132], 595: [1133..1160], 598: [1161..1192], 601: [1193..1249], 604: [1250..1281], 607: [1282..1309], 610: [1310..1370], 614: [1371..1393], 624: [1394..1432], 633: [1433..1454], 643: [1455..1493], 653: [1494..1515], 663: [1516..1554], 673: [1555..1576], 683: [1577..1615], 693: [1616..1637], 703: [1638..1677], 713: [1678..1699], 723: [1700..1738], 733: [1739..1760], 743: [1761..1799], 753: [1800..1821], 763: [1822..1860], 773: [1861..1909], 783: [1910..1975], 793: [1976..2024], 803: [2025..2090], 813: [2091..2139], 823: [2140..2205], 833: [2206..2254], 843: [2255..2320], }
+--------------------
+
+Pair 8
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1880.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..13], 24: [14..65], 47: [66..73], 70: [74..129], 93: [130..142], 116: [143..194], 139: [195..206], 162: [207..258], 185: [259..271], 208: [272..323], 231: [324..335], 254: [336..387], 277: [388..399], 300: [400..451], 323: [452..463], 346: [464..515], 369: [516..541], 392: [542..610], 415: [611..636], 438: [637..705], 462: [706..732], 485: [733..800], 507: [801..825], 530: [826..894], 553: [895..923], 555: [924..954], 557: [955..1012], 559: [1013..1043], 561: [1044..1072], 563: [1073..1132], 565: [1133..1161], 567: [1162..1192], 569: [1193..1250], 571: [1251..1281], 573: [1282..1310], 575: [1311..1370], 578: [1371..1394], 587: [1395..1432], 595: [1433..1455], 604: [1456..1493], 613: [1494..1516], 622: [1517..1554], 631: [1555..1577], 640: [1578..1615], 649: [1616..1638], 658: [1639..1677], 667: [1678..1700], 676: [1701..1738], 685: [1739..1761], 694: [1762..1799], 703: [1800..1822], 712: [1823..1860], 721: [1861..1910], 730: [1911..1975], 739: [1976..2025], 748: [2026..2090], 757: [2091..2140], 766: [2141..2205], 775: [2206..2255], 784: [2256..2320], }
+--------------------
+
+Pair 9
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1880.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 3: [895..1370], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..14], 23: [15..65], 45: [66..74], 67: [75..129], 89: [130..143], 111: [144..194], 133: [195..207], 155: [208..258], 177: [259..272], 199: [273..323], 221: [324..336], 243: [337..387], 265: [388..400], 287: [401..451], 309: [452..464], 331: [465..515], 353: [516..542], 375: [543..610], 397: [611..637], 419: [638..705], 442: [706..733], 464: [734..800], 485: [801..826], 507: [827..894], 529: [895..924], 530: [925..954], 531: [955..1013], 532: [1014..1043], 533: [1044..1073], 534: [1074..1132], 535: [1133..1162], 536: [1163..1192], 537: [1193..1251], 538: [1252..1281], 539: [1282..1311], 540: [1312..1370], 542: [1371..1395], 550: [1396..1432], 557: [1433..1456], 565: [1457..1493], 573: [1494..1517], 581: [1518..1554], 589: [1555..1578], 597: [1579..1615], 605: [1616..1639], 613: [1640..1677], 621: [1678..1701], 629: [1702..1738], 637: [1739..1762], 645: [1763..1799], 653: [1800..1823], 661: [1824..1860], 669: [1861..1911], 677: [1912..1975], 685: [1976..2026], 693: [2027..2090], 701: [2091..2141], 709: [2142..2205], 717: [2206..2256], 725: [2257..2320], }
+--------------------
+
+Pair 10
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1504.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..15], 22: [16..65], 44: [66..80], 65: [81..129], 85: [130..144], 106: [145..194], 127: [195..208], 148: [209..258], 169: [259..273], 190: [274..323], 211: [324..337], 232: [338..387], 253: [388..401], 274: [402..451], 295: [452..465], 316: [466..515], 337: [516..543], 358: [544..610], 379: [611..638], 400: [639..705], 422: [706..734], 443: [735..800], 463: [801..827], 484: [828..894], 506: [1371..1396], 513: [1397..1432], 519: [1433..1457], 526: [1458..1493], 533: [1494..1518], 540: [1519..1554], 547: [1555..1579], 554: [1580..1615], 561: [1616..1640], 568: [1641..1677], 575: [1678..1702], 582: [1703..1738], 589: [1739..1763], 596: [1764..1799], 603: [1800..1824], 610: [1825..1860], 617: [1861..1912], 624: [1913..1975], 631: [1976..2027], 638: [2028..2090], 645: [2091..2142], 652: [2143..2205], 659: [2206..2257], 666: [2258..2320], }
+--------------------
+
+Pair 11
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1504.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..16], 21: [17..65], 42: [66..81], 62: [82..129], 81: [130..145], 101: [146..194], 121: [195..209], 141: [210..258], 161: [259..274], 181: [275..323], 201: [324..338], 221: [339..387], 241: [388..402], 261: [403..451], 281: [452..466], 301: [467..515], 321: [516..544], 341: [545..610], 361: [611..639], 381: [640..705], 402: [706..735], 422: [736..800], 441: [801..828], 461: [829..894], 482: [1371..1397], 488: [1398..1432], 493: [1433..1458], 499: [1459..1493], 505: [1494..1519], 511: [1520..1554], 517: [1555..1580], 523: [1581..1615], 529: [1616..1641], 535: [1642..1677], 541: [1678..1703], 547: [1704..1738], 553: [1739..1764], 559: [1765..1799], 565: [1800..1825], 571: [1826..1860], 577: [1861..1913], 583: [1914..1975], 589: [1976..2028], 595: [2029..2090], 601: [2091..2143], 607: [2144..2205], 613: [2206..2258], 619: [2259..2320], }
+--------------------
+
+Pair 12
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1504.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..17], 20: [18..65], 40: [66..82], 59: [83..129], 77: [130..146], 96: [147..194], 115: [195..210], 134: [211..258], 153: [259..275], 172: [276..323], 191: [324..339], 210: [340..387], 229: [388..403], 248: [404..451], 267: [452..467], 286: [468..515], 305: [516..545], 324: [546..610], 343: [611..640], 362: [641..705], 382: [706..736], 401: [737..800], 419: [801..829], 438: [830..894], 458: [1371..1398], 463: [1399..1432], 467: [1433..1459], 472: [1460..1493], 477: [1494..1520], 482: [1521..1554], 487: [1555..1581], 492: [1582..1615], 497: [1616..1642], 502: [1643..1677], 507: [1678..1704], 512: [1705..1738], 517: [1739..1765], 522: [1766..1799], 527: [1800..1826], 532: [1827..1860], 537: [1861..1914], 542: [1915..1975], 547: [1976..2029], 552: [2030..2090], 557: [2091..2144], 562: [2145..2205], 567: [2206..2259], 572: [2260..2320], }
+--------------------
+
+Pair 13
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1504.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..18], 19: [19..65], 38: [66..83], 56: [84..129], 73: [130..147], 91: [148..194], 109: [195..211], 127: [212..258], 145: [259..276], 163: [277..323], 181: [324..340], 199: [341..387], 217: [388..404], 235: [405..451], 253: [452..468], 271: [469..515], 289: [516..546], 307: [547..610], 325: [611..641], 343: [642..705], 362: [706..737], 380: [738..800], 397: [801..830], 415: [831..894], 434: [1371..1399], 438: [1400..1432], 441: [1433..1460], 445: [1461..1493], 449: [1494..1521], 453: [1522..1554], 457: [1555..1582], 461: [1583..1615], 465: [1616..1643], 469: [1644..1677], 473: [1678..1705], 477: [1706..1738], 481: [1739..1766], 485: [1767..1799], 489: [1800..1827], 493: [1828..1860], 497: [1861..1915], 501: [1916..1975], 505: [1976..2030], 509: [2031..2090], 513: [2091..2145], 517: [2146..2205], 521: [2206..2260], 525: [2261..2320], }
+--------------------
+
+Pair 14
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1504.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..19], 18: [20..65], 36: [66..84], 53: [85..129], 69: [130..148], 86: [149..194], 103: [195..212], 120: [213..258], 137: [259..277], 154: [278..323], 171: [324..341], 188: [342..387], 205: [388..405], 222: [406..451], 239: [452..469], 256: [470..515], 273: [516..547], 290: [548..610], 307: [611..642], 324: [643..705], 342: [706..738], 359: [739..800], 375: [801..831], 392: [832..894], 410: [1371..1400], 413: [1401..1432], 415: [1433..1461], 418: [1462..1493], 421: [1494..1522], 424: [1523..1554], 427: [1555..1583], 430: [1584..1615], 433: [1616..1644], 436: [1645..1677], 439: [1678..1706], 442: [1707..1738], 445: [1739..1767], 448: [1768..1799], 451: [1800..1828], 454: [1829..1860], 457: [1861..1916], 460: [1917..1975], 463: [1976..2031], 466: [2032..2090], 469: [2091..2146], 472: [2147..2205], 475: [2206..2261], 478: [2262..2320], }
+--------------------
+
+Pair 15
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1504.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..20], 17: [21..65], 34: [66..85], 50: [86..129], 65: [130..149], 81: [150..194], 97: [195..213], 113: [214..258], 129: [259..278], 145: [279..323], 161: [324..342], 177: [343..387], 193: [388..406], 209: [407..451], 225: [452..470], 241: [471..515], 257: [516..548], 273: [549..610], 289: [611..643], 305: [644..705], 322: [706..739], 338: [740..800], 353: [801..832], 369: [833..894], 386: [1371..1401], 388: [1402..1432], 389: [1433..1462], 391: [1463..1493], 393: [1494..1523], 395: [1524..1554], 397: [1555..1584], 399: [1585..1615], 401: [1616..1645], 403: [1646..1677], 405: [1678..1707], 407: [1708..1738], 409: [1739..1768], 411: [1769..1799], 413: [1800..1829], 415: [1830..1860], 417: [1861..1917], 419: [1918..1975], 421: [1976..2032], 423: [2033..2090], 425: [2091..2147], 427: [2148..2205], 429: [2206..2262], 431: [2263..2320], }
+--------------------
+
+Pair 16
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 1461.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], 4: [1371..1860], 5: [1861..2320], }
+Gamma_C = {1: [1..21], 16: [22..65], 32: [66..86], 47: [87..129], 61: [130..150], 76: [151..194], 91: [195..214], 106: [215..258], 121: [259..279], 136: [280..323], 151: [324..343], 166: [344..387], 181: [388..407], 196: [408..451], 211: [452..471], 226: [472..515], 241: [516..549], 256: [550..610], 271: [611..644], 286: [645..705], 302: [706..740], 317: [741..800], 331: [801..833], 346: [834..894], 362: [1388..1432], 363: [1433..1463], 364: [1464..1493], 365: [1494..1524], 366: [1525..1554], 367: [1555..1585], 368: [1586..1615], 369: [1616..1646], 370: [1647..1677], 371: [1678..1708], 372: [1709..1738], 373: [1739..1769], 374: [1770..1799], 375: [1800..1830], 376: [1831..1860], 377: [1861..1918], 378: [1919..1975], 379: [1976..2033], 380: [2034..2090], 381: [2091..2148], 382: [2149..2205], 383: [2206..2263], 384: [2264..2320], }
+--------------------
+
+Pair 17
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..22], 15: [23..65], 30: [66..87], 44: [88..129], 57: [130..151], 71: [152..194], 85: [195..215], 99: [216..258], 113: [259..280], 127: [281..323], 141: [324..344], 155: [345..387], 169: [388..408], 183: [409..451], 197: [452..472], 211: [473..515], 225: [516..550], 239: [551..610], 253: [611..645], 267: [646..705], 282: [706..741], 296: [742..800], 309: [801..834], 323: [835..894], }
+--------------------
+
+Pair 18
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..23], 14: [24..65], 28: [66..88], 41: [89..129], 53: [130..152], 66: [153..194], 79: [195..216], 92: [217..258], 105: [259..281], 118: [282..323], 131: [324..345], 144: [346..387], 157: [388..409], 170: [410..451], 183: [452..473], 196: [474..515], 209: [516..551], 222: [552..610], 235: [611..646], 248: [647..705], 262: [706..742], 275: [743..800], 287: [801..835], 300: [836..894], }
+--------------------
+
+Pair 19
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..24], 13: [25..65], 26: [66..89], 38: [90..129], 49: [130..153], 61: [154..194], 73: [195..217], 85: [218..258], 97: [259..282], 109: [283..323], 121: [324..346], 133: [347..387], 145: [388..410], 157: [411..451], 169: [452..474], 181: [475..515], 193: [516..552], 205: [553..610], 217: [611..647], 229: [648..705], 242: [706..743], 254: [744..800], 265: [801..836], 277: [837..894], }
+--------------------
+
+Pair 20
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..25], 12: [26..65], 24: [66..90], 35: [91..129], 45: [130..154], 56: [155..194], 67: [195..218], 78: [219..258], 89: [259..283], 100: [284..323], 111: [324..347], 122: [348..387], 133: [388..411], 144: [412..451], 155: [452..475], 166: [476..515], 177: [516..553], 188: [554..610], 199: [611..648], 210: [649..705], 222: [706..744], 233: [745..800], 243: [801..837], 254: [838..894], }
+--------------------
+
+Pair 21
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..26], 11: [27..65], 22: [66..91], 32: [92..129], 41: [130..155], 51: [156..194], 61: [195..219], 71: [220..258], 81: [259..284], 91: [285..323], 101: [324..348], 111: [349..387], 121: [388..412], 131: [413..451], 141: [452..476], 151: [477..515], 161: [516..554], 171: [555..610], 181: [611..649], 191: [650..705], 202: [706..745], 212: [746..800], 221: [801..838], 231: [839..894], }
+--------------------
+
+Pair 22
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..27], 10: [28..65], 20: [66..92], 29: [93..129], 37: [130..156], 46: [157..194], 55: [195..220], 64: [221..258], 73: [259..285], 82: [286..323], 91: [324..349], 100: [350..387], 109: [388..413], 118: [414..451], 127: [452..477], 136: [478..515], 145: [516..555], 154: [556..610], 163: [611..650], 172: [651..705], 182: [706..746], 191: [747..800], 199: [801..839], 208: [840..894], }
+--------------------
+
+Pair 23
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..28], 9: [29..65], 18: [66..93], 26: [94..129], 33: [130..157], 41: [158..194], 49: [195..221], 57: [222..258], 65: [259..286], 73: [287..323], 81: [324..350], 89: [351..387], 97: [388..414], 105: [415..451], 113: [452..478], 121: [479..515], 129: [516..556], 137: [557..610], 145: [611..651], 153: [652..705], 162: [706..747], 170: [748..800], 177: [801..840], 185: [841..894], }
+--------------------
+
+Pair 24
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..29], 8: [30..65], 16: [66..94], 23: [95..129], 29: [130..158], 36: [159..194], 43: [195..222], 50: [223..258], 57: [259..287], 64: [288..323], 71: [324..351], 78: [352..387], 85: [388..415], 92: [416..451], 99: [452..479], 106: [480..515], 113: [516..557], 120: [558..610], 127: [611..652], 134: [653..705], 142: [706..748], 149: [749..800], 155: [801..841], 162: [842..894], }
+--------------------
+
+Pair 25
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..30], 7: [31..65], 14: [66..95], 20: [96..129], 25: [130..159], 31: [160..194], 37: [195..223], 43: [224..258], 49: [259..288], 55: [289..323], 61: [324..352], 67: [353..387], 73: [388..416], 79: [417..451], 85: [452..480], 91: [481..515], 97: [516..558], 103: [559..610], 109: [611..653], 115: [654..705], 122: [706..749], 128: [750..800], 133: [801..842], 139: [843..894], }
+--------------------
+
+Pair 26
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..31], 6: [32..65], 12: [66..96], 17: [97..129], 21: [130..160], 26: [161..194], 31: [195..224], 36: [225..258], 41: [259..289], 46: [290..323], 51: [324..353], 56: [354..387], 61: [388..417], 66: [418..451], 71: [452..481], 76: [482..515], 81: [516..559], 86: [560..610], 91: [611..654], 96: [655..705], 102: [706..750], 107: [751..800], 111: [801..843], 116: [844..894], }
+--------------------
+
+Pair 27
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..32], 5: [33..65], 10: [66..97], 14: [98..129], 17: [130..161], 21: [162..194], 25: [195..225], 29: [226..258], 33: [259..290], 37: [291..323], 41: [324..354], 45: [355..387], 49: [388..418], 53: [419..451], 57: [452..482], 61: [483..515], 65: [516..560], 69: [561..610], 73: [611..655], 77: [656..705], 82: [706..751], 86: [752..800], 89: [801..844], 93: [845..894], }
+--------------------
+
+Pair 28
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..33], 4: [34..65], 8: [66..98], 11: [99..129], 13: [130..162], 16: [163..194], 19: [195..226], 22: [227..258], 25: [259..291], 28: [292..323], 31: [324..355], 34: [356..387], 37: [388..419], 40: [420..451], 43: [452..483], 46: [484..515], 49: [516..561], 52: [562..610], 55: [611..656], 58: [657..705], 62: [706..752], 65: [753..800], 67: [801..845], 70: [846..894], }
+--------------------
+
+Pair 29
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 718.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..34], 3: [35..65], 6: [66..99], 8: [100..129], 9: [130..163], 11: [164..194], 13: [195..227], 15: [228..258], 17: [259..292], 19: [293..323], 21: [324..356], 23: [357..387], 25: [388..420], 27: [421..451], 29: [452..484], 31: [485..515], 33: [516..562], 35: [563..610], 37: [611..657], 39: [658..705], 42: [706..753], 44: [754..800], 45: [801..846], 47: [847..894], }
+--------------------
+
+Pair 30
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: 649.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {1: [1..515], 2: [516..894], }
+Gamma_C = {1: [1..35], 2: [36..65], 4: [76..129], 5: [130..164], 6: [165..194], 7: [195..228], 8: [229..258], 9: [259..293], 10: [294..323], 11: [324..357], 12: [358..387], 13: [388..421], 14: [422..451], 15: [452..485], 16: [486..515], 17: [516..563], 18: [564..610], 19: [611..658], 20: [659..705], 22: [725..800], 23: [801..847], 24: [848..894], }
+--------------------
+
+Pair 31
+Reading sequence seq07d/pasg/T.
+Sequence read successfully!
+Reading sequence seq07d/pasg/S_temp.
+Sequence read successfully!
+Reading segments seq07d/pasg/T.predex.
+Segments read successfully!
+Reading segments seq07d/pasg/S_temp.predex.
+Segments read successfully!
+Allocating matrix...
+Matrix allocated successfully!
+Initializing matrix...
+Matrix initialized successfully!
+Calculating matrix...
+Matrix calculated successfully!
+Looking for the maximum value in matrix...
+Maximum value in matrix found: -590.
+Building Gamma_B and Gamma_C...
+Gamma_B and Gamma_C built successfully!
+
+
+--------------------
+Printing solution:
+Gamma_B = {2: [516..894], }
+Gamma_C = {1: [66..79], 2: [706..726], 3: [1371..1391], }
+--------------------
+
+
+real	19m58.922s
+user	19m57.983s
+sys	0m0.457s

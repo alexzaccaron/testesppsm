@@ -1,0 +1,10 @@
+chr16	Cufflinks	transcript	66571426	66579118	1000	+	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; FPKM "218841.0505640856"; frac "0.424506"; conf_lo "129287.652979"; conf_hi "308394.448149"; cov "10.629406";
+chr16	Cufflinks	exon	66571426	66571562	1000	+	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; exon_number "1"; FPKM "218841.0505640856"; frac "0.424506"; conf_lo "129287.652979"; conf_hi "308394.448149"; cov "10.629406";
+chr16	Cufflinks	exon	66577104	66577202	1000	+	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; exon_number "2"; FPKM "218841.0505640856"; frac "0.424506"; conf_lo "129287.652979"; conf_hi "308394.448149"; cov "10.629406";
+chr16	Cufflinks	exon	66578831	66579118	1000	+	.	gene_id "CUFF.1"; transcript_id "CUFF.1.1"; exon_number "3"; FPKM "218841.0505640856"; frac "0.424506"; conf_lo "129287.652979"; conf_hi "308394.448149"; cov "10.629406";
+chr16	Cufflinks	transcript	66577866	66579127	1000	.	.	gene_id "CUFF.2"; transcript_id "CUFF.2.1"; FPKM "88880.4321111895"; frac "0.575494"; conf_lo "57197.766735"; conf_hi "120563.097488"; cov "4.317043";
+chr16	Cufflinks	exon	66577866	66579127	1000	.	.	gene_id "CUFF.2"; transcript_id "CUFF.2.1"; exon_number "1"; FPKM "88880.4321111895"; frac "0.575494"; conf_lo "57197.766735"; conf_hi "120563.097488"; cov "4.317043";
+chr16	Cufflinks	transcript	66566358	66568998	1000	.	.	gene_id "CUFF.3"; transcript_id "CUFF.3.1"; FPKM "158168.0014545855"; frac "0.828232"; conf_lo "130533.908220"; conf_hi "185802.094689"; cov "8.315484";
+chr16	Cufflinks	exon	66566358	66568998	1000	.	.	gene_id "CUFF.3"; transcript_id "CUFF.3.1"; exon_number "1"; FPKM "158168.0014545855"; frac "0.828232"; conf_lo "130533.908220"; conf_hi "185802.094689"; cov "8.315484";
+chr16	Cufflinks	transcript	66567765	66569823	272	.	.	gene_id "CUFF.3"; transcript_id "CUFF.3.2"; FPKM "43118.4591805882"; frac "0.171768"; conf_lo "25798.238278"; conf_hi "60438.680083"; cov "2.266899";
+chr16	Cufflinks	exon	66567765	66569823	272	.	.	gene_id "CUFF.3"; transcript_id "CUFF.3.2"; exon_number "1"; FPKM "43118.4591805882"; frac "0.171768"; conf_lo "25798.238278"; conf_hi "60438.680083"; cov "2.266899";
